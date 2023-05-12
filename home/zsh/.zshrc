@@ -164,3 +164,4 @@ eval "$(zoxide init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# eval "$(starship init zsh)"
