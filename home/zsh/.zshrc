@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
+[[ -f ~/.zsh/functions.zsh ]] && source ~/.zsh/functions.zsh
+[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
+[[ -f ~/.zsh/nvm.zsh ]] && source ~/.zsh/nvm.zsh
+[[ -f ~/.zsh/wsl2fix.zsh ]] && source ~/.zsh/wsl2fix.zsh
+[[ -f ~/.zsh/goto.zsh ]] && source ~/.zsh/goto.zsh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -164,4 +171,9 @@ eval "$(zoxide init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Load starship
 # eval "$(starship init zsh)"
+
+# Load Direnv
+# eval "$(direnv hook zsh)"
