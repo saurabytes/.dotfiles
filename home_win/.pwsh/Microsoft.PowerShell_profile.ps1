@@ -1,7 +1,42 @@
+Import-Nodule Terminal-Icons
+S.
+Set-PSR
+Set-PSRi
+# PSReadLine
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -Bellstyle None
+Set-PSReadLineKeyHandler -chord 'Ctrl+d' -Function Deletechar
+Set-PSReadLineOption-PredictionSourceHistory
+Set-Alias g git 
+Set-Alias grep findstr
+Set-Alias vim nvim
+Set-Alias la 1s
+Set-Alias 11 1s
+Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
+Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
+
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+# Fzf
+# Import -Module PSFzf
+# Set-PsFZ6Option -PSReadeinechordprovider 'Ctre+f' -PsReadeinechordreverseHist Ctre+r'
+
+# Utilities
+function which ( $command)
+	Get-Command -Name $command -ErrorAction SilentlyContinue |
+		Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+
 New-Alias k kubectl
 Remove-Alias h
 New-Alias h helm
 New-Alias g goto
+
+# Utilities
+function which ( $command)
+	Get-Command -Name $command -ErrorAction SilentlyContinue |
+		Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+
 
 function goto {
     param (
