@@ -7,6 +7,7 @@ fi
 
 for file in ~/.aliases/**; 
 do 
+	# echo $file
 	[[ -f $file ]] && source "$file";
 done
 

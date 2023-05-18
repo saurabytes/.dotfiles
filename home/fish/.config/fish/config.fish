@@ -28,7 +28,7 @@ if status is-interactive
 end
 
 
-for file in ~/.aliases/.{functions*,exports*,aliases*,zsh}
+for file in ~/.aliases/{.functions*,exports*,*aliases*}
   if test -r $file
     source "$file"
   end

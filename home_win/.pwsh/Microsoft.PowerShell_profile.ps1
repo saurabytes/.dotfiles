@@ -1,12 +1,10 @@
 Import-Nodule Terminal-Icons
-S.
-Set-PSR
-Set-PSRi
+
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -Bellstyle None
 Set-PSReadLineKeyHandler -chord 'Ctrl+d' -Function Deletechar
-Set-PSReadLineOption-PredictionSourceHistory
+
 Set-Alias g git 
 Set-Alias grep findstr
 Set-Alias vim nvim
@@ -33,7 +31,7 @@ New-Alias h helm
 New-Alias g goto
 
 # Utilities
-function which ( $command)
+function which ($command)
 	Get-Command -Name $command -ErrorAction SilentlyContinue |
 		Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 

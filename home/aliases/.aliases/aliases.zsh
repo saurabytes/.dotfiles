@@ -50,3 +50,15 @@ alias cpr="code /home/xcad/obsidianvault/projects"
 
 # Scripts
 alias obsidian="python3 /Users/sabi/Projects/christianlempa/scripts/obsidian"
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto '
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
