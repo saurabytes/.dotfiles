@@ -1,51 +1,21 @@
-set fish_greeting 
-# set -gx TERM xterm-256color
+# Put system-wide fish configuration entries here
+# or in .fish files in conf.d/
+# Files in conf.d can be overridden by the user
+# by files with the same name in $XDG_CONFIG_HOME/fish/conf.d
 
-
-# # theme
-# set -g theme_color_scheme terminal-dark
-# set -g fish_prompt_pwd_dir_length 1
-# set -g theme_display_user yes
-# set -g theme_hide_hostname no
-# set -g theme_hostname always
-
-# aliases
-alias ls "ls -p -G"
-alias la "ls -A"
-alias ll "ls -l"
-alias lla "ll -A"
-alias g git
-command -qv nvim && alias vim nvim
-
-set -gx EDITOR nvim
-
-set -gx PATH bin $PATH
-set -gx PATH ~/bin $PATH
-set -gx PATH ~/.local/bin $PATH
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
-
-for file in ~/.aliases/{.functions*,exports*,*aliases*}
-  if test -r $file
-    source "$file"
-  end
-end
-
-switch (uname)
-  case Darwin
-    # source (dirname (status --current-filename))/config-osx.fish
-  case Linux
-    # source (dirname (status --current-filename))/config-linux.fish
-  case '*'
-    # source (dirname (status --current-filename))/config-windows.fish
-end
-
-set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-if test -f $LOCAL_CONFIG
-  source $LOCAL_CONFIG
-end
-
+# This file is run by all fish instances.
+# To include configuration only for login shells, use
+# if status is-login
+#    ...
+# end
+# To include configuration only for interactive shells, use
+# if status is-interactive
+#   ...
+# end
+#
 starship init fish | source
+
+alias theme='starship preset -l | fzf | xargs -I {} sh -c  "echo {}; starship preset {} -o ~/.config/starship.toml"'
+alias vim=nvim
+alias vi=nvim
+zoxide init --cmd cd fish | source
